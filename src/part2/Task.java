@@ -3,13 +3,18 @@ package part2;
 import java.util.List;
 import javax.swing.JOptionPane;
 
+/**
+ *
+ * @author RC_Student_lab
+ */
+
 class Task {
     private static int taskCounter = 0;
-    private String taskName;
-    private int taskNumber;
+    String taskName;
+    int taskNumber;
     private String taskDescription;
-    private String developerDetails;
-    private double taskDuration;
+    String developerDetails;
+    double taskDuration;
     private String taskID;
     private String taskStatus;
 

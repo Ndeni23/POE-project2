@@ -3,6 +3,11 @@ package part2;
 
 import javax.swing.JOptionPane;
 
+/**
+ *
+ * @author RC_Student_lab
+ */
+
 class Register {
     protected String username;
     protected String password;

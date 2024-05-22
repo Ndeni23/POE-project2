@@ -1,5 +1,10 @@
 package part2;
 
+/**
+ *
+ * @author RC_Student_lab
+ */
+
 class Login {
     private final Register register;
 
