@@ -17,7 +17,7 @@ public class Part3 {
         if (registerStatus == null) { // User canceled registration
             System.exit(0); // Exit the program
         } else {
-            JOptionPane.showMessageDialog(null, registerStatus); 
+            JOptionPane.showMessageDialog(null, registerStatus);
         }
 
         while (true) {
@@ -192,25 +192,7 @@ public class Part3 {
             }
         }
     }
-    
-    
-    public static void deleteTask(List<Task> tasks, String taskNameToDelete) {
-    boolean taskFound = false;
 
-    for (int i = 0; i < tasks.size(); i++) {
-        if (tasks.get(i).taskName.equalsIgnoreCase(taskNameToDelete)) {
-            tasks.remove(i);
-            taskFound = true;
-            break;
-        }
-    }
-
-    if (taskFound) {
-        JOptionPane.showMessageDialog(null, "Task '" + taskNameToDelete + "' deleted successfully.");
-    } else {
-        JOptionPane.showMessageDialog(null, "No task found with the name '" + taskNameToDelete + "'");
-    }
-}
 
     // Methods for Report Options
     private static void displayDoneTasks() {
@@ -345,11 +327,7 @@ public class Part3 {
         return true; // String is valid
     }
 
-    static String searchDeveloperTasksAndGetResult(List<Task> tasks, String samantha_Paulson) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    static String displayReportAndGetResult(List<Task> tasks) {
+    static String displayLongestTaskAndGetResult(List<Task> tasks) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
@@ -357,7 +335,15 @@ public class Part3 {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
-    static String displayLongestTaskAndGetResult(List<Task> tasks) {
+    static String searchDeveloperTasksAndGetResult(List<Task> tasks, String samantha_Paulson) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-} 
+
+    static void deleteTask(List<Task> tasks, String taskToDelete) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    static String displayReportAndGetResult(List<Task> tasks) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+}

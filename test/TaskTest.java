@@ -5,16 +5,13 @@ import static org.junit.jupiter.api.Assertions.*;
 import java.util.ArrayList;
 import java.util.List;
 
-
 class Part3Test {
-
 
     // Test data for tasks
     private static final Task task1 = new Task("Create Login", "Create the login feature", "Mike Smith", 5, "To Do");
     private static final Task task2 = new Task("Create Add Features", "Implement new features", "Edward Harrison", 8, "Doing");
     private static final Task task3 = new Task("Create Reports", "Build reports functionality", "Samantha Paulson", 2, "Done");
     private static final Task task4 = new Task("Add Arrays", "Implement array functionality", "Glenda Oberholzer", 11, "To Do");
-
 
     @Test
     void testDeveloperArrayPopulation() {
@@ -24,19 +21,15 @@ class Part3Test {
         tasks.add(task3);
         tasks.add(task4);
 
-
         String[] expectedDevelopers = {"Mike Smith", "Edward Harrison", "Samantha Paulson", "Glenda Oberholzer"};
         String[] actualDevelopers = new String[tasks.size()];
-
 
         for (int i = 0; i < tasks.size(); i++) {
             actualDevelopers[i] = tasks.get(i).developerDetails;
         }
 
-
         assertArrayEquals(expectedDevelopers, actualDevelopers);
     }
-
 
     @Test
     void testDisplayLongestTask() {
@@ -46,13 +39,11 @@ class Part3Test {
         tasks.add(task3);
         tasks.add(task4);
 
-        String expectedLongestTask = "Glenda Oberholzer, 11.0"; // Correcting the expected result
-        String actualLongestTask;
-        actualLongestTask = Part3.displayLongestTaskAndGetResult(tasks);
+        String expectedLongestTask = "Glenda Oberholzer, 11.0";
+        String actualLongestTask = Part3.displayLongestTaskAndGetResult(tasks);
 
         assertEquals(expectedLongestTask, actualLongestTask);
     }
-
 
     @Test
     void testSearchForTask() {
@@ -62,14 +53,11 @@ class Part3Test {
         tasks.add(task3);
         tasks.add(task4);
 
-
         String expectedResult = "Mike Smith, Create Login";
         String actualResult = Part3.searchForTaskAndGetResult(tasks, "Create Login");
 
-
         assertEquals(expectedResult, actualResult);
     }
-
 
     @Test
     void testSearchDeveloperTasks() {
@@ -79,14 +67,11 @@ class Part3Test {
         tasks.add(task3);
         tasks.add(task4);
 
-
         String expectedResult = "Create Reports";
         String actualResult = Part3.searchDeveloperTasksAndGetResult(tasks, "Samantha Paulson");
 
-
         assertEquals(expectedResult, actualResult);
     }
-
 
     @Test
     void testDeleteTask() {
@@ -96,10 +81,8 @@ class Part3Test {
         tasks.add(task3);
         tasks.add(task4);
 
-
         String taskToDelete = "Create Reports";
         Part3.deleteTask(tasks, taskToDelete);
-
 
         boolean taskFound = false;
         for (Task task : tasks) {
@@ -109,10 +92,8 @@ class Part3Test {
             }
         }
 
-
         assertFalse(taskFound); // Task should no longer be in the list
     }
-
 
     @Test
     void testDisplayReport() {
@@ -121,7 +102,6 @@ class Part3Test {
         tasks.add(task2);
         tasks.add(task3);
         tasks.add(task4);
-
 
         String expectedReport = """
                                 Task Status: To Do
@@ -157,17 +137,14 @@ class Part3Test {
                                 Task ID: AD:3:zer
                                 """;
 
-
         String actualReport = Part3.displayReportAndGetResult(tasks);
-
 
         assertEquals(expectedReport, actualReport);
     }
 
-
     // Helper methods to get results from private methods in Part3
-    // These methods are public so the test class can access them.
-    public static String displayLongestTaskAndGetResult(List<Task> tasks) {        String output = "";
+    public static String displayLongestTaskAndGetResult(List<Task> tasks) {
+        String output = "";
         if (tasks.isEmpty()) {
             output = "No tasks available.";
         } else {
@@ -178,12 +155,10 @@ class Part3Test {
                 }
             }
 
-
             output = longestTask.developerDetails + ", " + longestTask.taskDuration;
         }
         return output;
     }
-
 
     public static String searchForTaskAndGetResult(List<Task> tasks, String taskNameToSearch) {
         String output = "";
@@ -195,7 +170,6 @@ class Part3Test {
         return output;
     }
 
-
     public static String searchDeveloperTasksAndGetResult(List<Task> tasks, String developerToSearch) {
         String output = "";
         for (Task task : tasks) {
@@ -206,12 +180,12 @@ class Part3Test {
         return output;
     }
 
-
     public static String displayReportAndGetResult(List<Task> tasks) {
         String output = "";
         for (Task task : tasks) {
             output += task.printTaskDetails() + "\n";
         }
+        
         if (output.isEmpty()) {
             output = "No tasks available.";
         }
